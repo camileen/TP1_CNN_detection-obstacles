@@ -12,3 +12,9 @@ Steps:
 3. Activate the virtual environment (in .venv/): `source iat-tp1/bin/activate`
 4. Install python dependencies: `pip install -r requirements.txt`
 5. Run app (in project directory): `python3 main.py`
+
+## How to see logs?
+
+Use Tensorboard: 
+1. Run Tensorboard: `tensorboard --logdir=./logs/fit`
+2. Open Tensorbord in browser on [https://localhost:6006/](https://localhost:6006/)

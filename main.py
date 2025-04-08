@@ -2,6 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+import datetime
 
 # print("TensorFlow version:", tf.__version__)
 
@@ -21,6 +22,10 @@ val_generator = datagen.flow_from_directory(
   batch_size=32,
   class_mode='binary')
 
+# Définition du callback TensorBoard
+log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
+
 # Définir le modèle CNN
 model = Sequential([
   Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)),
@@ -35,7 +40,11 @@ model = Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Entraînement du modèle
-model.fit(train_generator, validation_data=val_generator, epochs=1)
+model.fit(
+  train_generator, 
+  validation_data=val_generator, 
+  epochs=3,
+  callbacks=[tensorboard_callback])
 
 # Évaluation
 loss, accuracy = model.evaluate(val_generator)
