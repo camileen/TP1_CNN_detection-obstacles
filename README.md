@@ -1,0 +1,14 @@
+# IAT TP1 : CNN, Image classification of obstacles
+
+The project is meant to evaluate different Convolutional Neural Networks (CNN) on image classification.
+CNN implementation relies on the python library _tensorflow_.
+
+## How to run the app?
+
+Steps:
+
+1. Download images dataset (in project directory):  `./download-dataset.sh`
+2. Create and deplace in the app virtual environment (same): `./app-env.sh`
+3. Activate the virtual environment (in .venv/): `source iat-tp1/bin/activate`
+4. Install python dependencies: `pip install -r requirements.txt`
+5. Run app (in project directory): `python3 main.py`
