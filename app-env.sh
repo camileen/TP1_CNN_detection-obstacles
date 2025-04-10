@@ -2,6 +2,7 @@
 
 # Create log directory
 mkdir -p /mnt/c/Users/byoub/Code/INSA-Lyon/IAT/TP1_CNN_detection-obstacles/logs/fit
+mkdir -p /mnt/c/Users/byoub/Code/INSA-Lyon/IAT/TP1_CNN_detection-obstacles/results
 
 # Create .venv directory
 mkdir -p /mnt/c/Users/byoub/Code/INSA-Lyon/IAT/TP1_CNN_detection-obstacles/.venv
