@@ -13,6 +13,8 @@ Steps:
 4. Install python dependencies: `pip install -r requirements.txt`
 5. Run app (in project directory): `python3 main.py`
 
+If you want to run a serie of test, run `python3 test.py`.
+
 ## How to see logs?
 
 Use Tensorboard: 
